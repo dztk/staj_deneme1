@@ -1,0 +1,16 @@
+C:\Users\Deniz\source\repos\deneme1\deneme1\obj\Debug\deneme1.csproj.AssemblyReference.cache
+C:\Users\Deniz\source\repos\deneme1\deneme1\obj\Debug\deneme1.Form1.resources
+C:\Users\Deniz\source\repos\deneme1\deneme1\obj\Debug\deneme1.Properties.Resources.resources
+C:\Users\Deniz\source\repos\deneme1\deneme1\obj\Debug\deneme1.csproj.GenerateResource.cache
+C:\Users\Deniz\source\repos\deneme1\deneme1\obj\Debug\deneme1.csproj.CoreCompileInputs.cache
+C:\Users\Deniz\source\repos\deneme1\deneme1\bin\Debug\deneme1.exe.config
+C:\Users\Deniz\source\repos\deneme1\deneme1\bin\Debug\deneme1.exe
+C:\Users\Deniz\source\repos\deneme1\deneme1\bin\Debug\deneme1.pdb
+C:\Users\Deniz\source\repos\deneme1\deneme1\bin\Debug\EntityFramework.dll
+C:\Users\Deniz\source\repos\deneme1\deneme1\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Deniz\source\repos\deneme1\deneme1\bin\Debug\EntityFramework.xml
+C:\Users\Deniz\source\repos\deneme1\deneme1\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Deniz\source\repos\deneme1\deneme1\obj\Debug\deneme1.csproj.Up2Date
+C:\Users\Deniz\source\repos\deneme1\deneme1\obj\Debug\deneme1.exe
+C:\Users\Deniz\source\repos\deneme1\deneme1\obj\Debug\deneme1.pdb
+C:\Users\Deniz\source\repos\deneme1\deneme1\obj\Debug\deneme1.exe.config

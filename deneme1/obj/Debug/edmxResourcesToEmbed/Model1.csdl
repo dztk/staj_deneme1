@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="denemeModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="dersler">
+    <Key>
+      <PropertyRef Name="ders_id" />
+    </Key>
+    <Property Name="ders_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ders_ad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="not_durum" Relationship="Self.FK_not_durum_dersler" FromRole="dersler" ToRole="not_durum" />
+  </EntityType>
+  <EntityType Name="not_durum">
+    <Key>
+      <PropertyRef Name="not_id" />
+    </Key>
+    <Property Name="not_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ogr_id" Type="Int32" />
+    <Property Name="ders" Type="Int32" />
+    <Property Name="sinav" Type="Int16" />
+    <Property Name="durum" Type="Boolean" />
+    <NavigationProperty Name="dersler" Relationship="Self.FK_not_durum_dersler" FromRole="not_durum" ToRole="dersler" />
+    <NavigationProperty Name="ogr" Relationship="Self.FK_not_durum_ogr" FromRole="not_durum" ToRole="ogr" />
+  </EntityType>
+  <EntityType Name="ogr">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FOTOĞRAF" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="not_durum" Relationship="Self.FK_not_durum_ogr" FromRole="ogr" ToRole="not_durum" />
+  </EntityType>
+  <Association Name="FK_not_durum_dersler">
+    <End Role="dersler" Type="Self.dersler" Multiplicity="0..1" />
+    <End Role="not_durum" Type="Self.not_durum" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="dersler">
+        <PropertyRef Name="ders_id" />
+      </Principal>
+      <Dependent Role="not_durum">
+        <PropertyRef Name="ders" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_not_durum_ogr">
+    <End Role="ogr" Type="Self.ogr" Multiplicity="0..1" />
+    <End Role="not_durum" Type="Self.not_durum" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ogr">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="not_durum">
+        <PropertyRef Name="ogr_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="denemeEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="dersler" EntityType="Self.dersler" />
+    <EntitySet Name="not_durum" EntityType="Self.not_durum" />
+    <EntitySet Name="ogr" EntityType="Self.ogr" />
+    <AssociationSet Name="FK_not_durum_dersler" Association="Self.FK_not_durum_dersler">
+      <End Role="dersler" EntitySet="dersler" />
+      <End Role="not_durum" EntitySet="not_durum" />
+    </AssociationSet>
+    <AssociationSet Name="FK_not_durum_ogr" Association="Self.FK_not_durum_ogr">
+      <End Role="ogr" EntitySet="ogr" />
+      <End Role="not_durum" EntitySet="not_durum" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
